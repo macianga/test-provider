@@ -1,6 +1,5 @@
 import {useContext} from "react";
 import terminalManagerContext from "../contexts/terminalManagerContext";
-import ComponentNoContext from "./ComponentNoContext";
 
 function ComponentThree() {
   const {runCommand} = useContext(terminalManagerContext);

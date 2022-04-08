@@ -1,4 +1,3 @@
-
 function ComponentNoContext2() {
   console.count("componentNoContext2")
   return (
