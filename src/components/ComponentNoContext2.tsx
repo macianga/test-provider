@@ -2,7 +2,7 @@ function ComponentNoContext2() {
   console.count("componentNoContext2")
   return (
     <div>
-      <h6>Component no context</h6>
+      <h6 className="text-3xl">Component no context</h6>
     </div>
   )
 }
