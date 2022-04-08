@@ -1,25 +1,27 @@
-import useTerminalManager from "../hooks/terminalManagerHook";
 import {useContext, useState} from "react";
 import terminalManagerContext from "../contexts/terminalManagerContext";
 
-function ComponentOne() {
+function ComponentRunCommandOrChangeWebsocket() {
   const {runCommand, setWebsocket} = useContext(terminalManagerContext);
   const [count, setCount] = useState(0);
-  console.count("app")
+  console.count("runCommand/ChangeWebsocket")
 
-  const dupa = ()=>{
-    runCommand("dupa dupa");
+  const runCommandWrapper = ()=>{
+    runCommand("running from component ComponentRunCommandOrChangeWebcoket");
   }
 
   return (
     <div className="App">
-      <button onClick={dupa}>run command</button> <br/>
+      <button onClick={runCommandWrapper}>run command</button><br/>
+
       <button onClick={() => {
         setCount(count + 1)
         setWebsocket(count.toString());
-      }}>change websocket</button>
+      }}>
+        change websocket
+      </button>
     </div>
   )
 }
 
-export default ComponentOne
+export default ComponentRunCommandOrChangeWebsocket

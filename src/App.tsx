@@ -1,27 +1,19 @@
-import {useEffect, useState} from 'react'
-import logo from './logo.svg'
 import './App.css'
-import terminalManagerContext from "./contexts/terminalManagerContext";
 import Terminal from "./components/Terminal";
-import ComponentOne from "./components/ComponentOne";
-import useTerminalManager from "./hooks/terminalManagerHook";
+import ComponentRunCommandOrChangeWebsocket from "./components/ComponentRunCommandOrChangeWebsocket";
 import ComponentTwo from "./components/ComponentTwo";
+import ComponentNoContext from "./components/ComponentNoContext";
+import TerminalManagerProvider from "./providers/terminalManagerProvider";
 
 function App() {
-  const {webSocket, setWebsocket, runCommand, setRunCommandCallback} = useTerminalManager();
-  useEffect(()=>{
-    setWebsocket("websocket");
-    setRunCommandCallback(() => (command: string) => {console.log(command)});
-    runCommand("dupa");
-  }, []);
-
   return (
     <div className="App">
-      <terminalManagerContext.Provider value={{webSocket: webSocket, setWebsocket: setWebsocket, runCommand: runCommand, setRunCommandCallback: setRunCommandCallback}}>
+      <TerminalManagerProvider>
         <Terminal/>
-        <ComponentOne/>
+        <ComponentRunCommandOrChangeWebsocket/>
         <ComponentTwo/>
-      </terminalManagerContext.Provider>
+        <ComponentNoContext/>
+      </TerminalManagerProvider>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import terminalManagerContext from "../contexts/terminalManagerContext";
 
 function Terminal() {
   const {setRunCommandCallback, webSocket} = useContext(terminalManagerContext);
-
+  console.count("terminal")
   const runCommandHandler = (command: string) => {
     console.log(`running command: ${command}`)
   }

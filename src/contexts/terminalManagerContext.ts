@@ -1,7 +1,5 @@
 import { createContext } from "react";
 
-
-// Dispatch<SetStateAction<(command: string) => void>>
 const terminalManagerContext = createContext({
   webSocket: '',
   setWebsocket: (ws: string)=>{},
@@ -9,4 +7,4 @@ const terminalManagerContext = createContext({
   setRunCommandCallback: (func: any) => func,
 });
 
-export default terminalManagerContext;
+export default terminalManagerContext
