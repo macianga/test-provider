@@ -1,5 +1,5 @@
 import {useContext, useState} from "react";
-import terminalManagerContext from "../contexts/terminalManagerContext";
+import terminalManagerContext from "@/contexts/terminalManagerContext";
 
 function ComponentRunCommandOrChangeWebsocket() {
   const {runCommand, setWebsocket} = useContext(terminalManagerContext);

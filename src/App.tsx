@@ -1,8 +1,8 @@
-import './App.css'
-import Terminal from "./components/Terminal";
-import ComponentRunCommandOrChangeWebsocket from "./components/ComponentRunCommandOrChangeWebsocket";
-import ComponentTwo from "./components/ComponentTwo";
-import TerminalManagerProvider from "./providers/terminalManagerProvider";
+import '@/App.css'
+import Terminal from "@/components/Terminal";
+import ComponentRunCommandOrChangeWebsocket from "@/components/ComponentRunCommandOrChangeWebsocket";
+import ComponentTwo from "@/components/ComponentTwo";
+import TerminalManagerProvider from "@/providers/terminalManagerProvider";
 import ComponentNoContext from "@/components/ComponentNoContext";
 
 

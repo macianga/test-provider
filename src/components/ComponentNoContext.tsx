@@ -1,4 +1,4 @@
-import ComponentNoContext2 from "./ComponentNoContext2";
+import ComponentNoContext2 from "@/components/ComponentNoContext2";
 
 function ComponentNoContext() {
   console.count("componentNoContext")

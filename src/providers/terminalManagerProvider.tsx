@@ -1,5 +1,5 @@
 import {useState} from "react";
-import terminalManagerContext from "../contexts/terminalManagerContext";
+import terminalManagerContext from "@/contexts/terminalManagerContext";
 
 // customowy hook ktory trzyma wszystkie wartosci
 function useTerminalManager() {

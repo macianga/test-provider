@@ -1,4 +1,4 @@
-import ComponentThree from "./ComponentThree";
+import ComponentThree from "@/components/ComponentThree";
 
 function ComponentTwo() {
   console.count("component2")
