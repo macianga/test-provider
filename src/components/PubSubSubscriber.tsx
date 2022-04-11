@@ -7,7 +7,7 @@ import pubSubSphere from "@/utils/PubSubSphere";
 function ComponentNoContext() {
   const [state, setState] = useState("");
 
-  pubSubSphere.files.useSubscriptionToFileOpened((topic, data) => {
+  pubSubSphere.files.opened.useSubscription((topic, data) => {
     if(!data)
       return;
     setState(`filename: ${data.filename}, size: ${data.size}`);

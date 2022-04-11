@@ -1,21 +1,20 @@
 import PubSub from "pubsub-js";
 import useSubscription from "@/hooks/useSubscription";
 
-type fileType = {filename: string, size: number};
+interface fileType {filename: string, size: number}
 
 
-class PubSubSphere {
-  files = {
-    useSubscriptionToFileOpened(callback: (topic: string, data?:fileType) => void){
-      useSubscription<fileType>("testFileOpened", callback)
+export default {
+  files: {
+    opened: {
+      eventName: "files/opened",
+      useSubscription(callback: (topic: string, data?:fileType) => void){
+        useSubscription<fileType>(this.eventName, callback)
+      },
+      publish(data?: fileType){
+        PubSub.publish(this.eventName, data)
+      }
     },
-    publishFileOpened(data?: fileType){
-      PubSub.publish("testFileOpened", data)
-    }
   }
 
 }
-
-const pubSubSphere = new PubSubSphere()
-
-export default pubSubSphere;

@@ -2,7 +2,7 @@ import pubSubSphere from "@/utils/PubSubSphere";
 
 function ComponentNoContext() {
   const handleClick = () => {
-    pubSubSphere.files.publishFileOpened({filename: 'asd', size: Math.random()});
+    pubSubSphere.files.opened.publish({filename: 'asd', size: Math.random()});
   }
 
   return (
