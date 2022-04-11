@@ -1,9 +1,8 @@
-import PubSub from 'pubsub-js';
-import PubSubEvents from "@/hooks/pubSubEvents";
+import pubSubSphere from "@/utils/PubSubSphere";
 
 function ComponentNoContext() {
   const handleClick = () => {
-    PubSub.publish(PubSubEvents.eventGroup.someEvent, `some data ${Math.random()}`)
+    pubSubSphere.files.publishFileOpened({filename: 'asd', size: Math.random()});
   }
 
   return (

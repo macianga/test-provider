@@ -2,13 +2,16 @@ import PubSub from 'pubsub-js';
 import {useState} from "react";
 import useSubscription from "@/hooks/useSubscription";
 import PubSubEvents from "@/hooks/pubSubEvents";
+import pubSubSphere from "@/utils/PubSubSphere";
 
 function ComponentNoContext() {
   const [state, setState] = useState("");
 
-  useSubscription(PubSubEvents.eventGroup.someEvent, (topic, data) => {
-    setState(data ? data : "no data");
-  });
+  pubSubSphere.files.useSubscriptionToFileOpened((topic, data) => {
+    if(!data)
+      return;
+    setState(`filename: ${data.filename}, size: ${data.size}`);
+  })
 
 
   const showSubscriptions = () => {
