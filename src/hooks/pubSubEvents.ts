@@ -1,9 +1,5 @@
-type test = {
-  message: string
-}
-
 export default {
-  test: {
+  eventGroup: {
     someEvent: "test/someEvent",
   }
 }

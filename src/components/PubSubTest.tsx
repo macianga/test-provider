@@ -3,7 +3,7 @@ import PubSubEvents from "@/hooks/pubSubEvents";
 
 function ComponentNoContext() {
   const handleClick = () => {
-    PubSub.publish(PubSubEvents.test.someEvent, "some data")
+    PubSub.publish(PubSubEvents.eventGroup.someEvent, `some data ${Math.random()}`)
   }
 
   return (

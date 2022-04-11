@@ -6,13 +6,13 @@ import PubSubEvents from "@/hooks/pubSubEvents";
 function ComponentNoContext() {
   const [state, setState] = useState("");
 
-  useSubscription(PubSubEvents.test.someEvent, (topic: string, data?: string) => {
+  useSubscription(PubSubEvents.eventGroup.someEvent, (topic, data) => {
     setState(data ? data : "no data");
   });
 
 
   const showSubscriptions = () => {
-    console.log(PubSub.countSubscriptions(PubSubEvents.test.someEvent))
+    console.log(PubSub.countSubscriptions(PubSubEvents.eventGroup.someEvent))
   }
 
 
