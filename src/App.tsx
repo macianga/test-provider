@@ -4,6 +4,8 @@ import ComponentRunCommandOrChangeWebsocket from "@/components/ComponentRunComma
 import ComponentTwo from "@/components/ComponentTwo";
 import TerminalManagerProvider from "@/providers/terminalManagerProvider";
 import ComponentNoContext from "@/components/ComponentNoContext";
+import PubSubTest from "@/components/PubSubTest";
+import PubSubSubscriber from "@/components/PubSubSubscriber";
 
 
 function App() {
@@ -15,6 +17,9 @@ function App() {
         <ComponentTwo/>
         <ComponentNoContext/>
       </TerminalManagerProvider>
+      -----------------------------------------------------------------------<br/><br/>
+      <PubSubTest/>
+      <PubSubSubscriber/>
     </div>
   )
 }
